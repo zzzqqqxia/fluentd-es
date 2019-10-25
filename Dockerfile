@@ -17,3 +17,6 @@ COPY entrypoint.sh /bin/
 
 RUN chmod +x /bin/entrypoint.sh
 USER fluent
+
+ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
+CMD ["fluentd"]
