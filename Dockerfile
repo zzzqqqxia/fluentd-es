@@ -12,11 +12,11 @@ RUN apk add --no-cache --update --virtual .build-deps \
  && apk del .build-deps \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-COPY fluent.conf /fluentd/etc/
-COPY entrypoint.sh /bin/
+#COPY fluent.conf /fluentd/etc/
+#COPY entrypoint.sh /bin/
 
-RUN chmod +x /bin/entrypoint.sh
+#RUN chmod +x /bin/entrypoint.sh
 USER fluent
 
-ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
-CMD ["fluentd"]
+#ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
+#CMD ["fluentd"]
